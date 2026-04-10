@@ -3,149 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BTN TELECOM | Premium Tech Store</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
-    
+    <title>BTN TELECOM | Boutique Premium</title>
+
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-    <div id="overlay" class="overlay"></div>
+<!-- ================= HEADER ================= -->
+<header>
+    <nav class="container">
+        <div class="logo">
+            <span class="logo-icon">BTN</span>
+            <span class="logo-text">TELECOM</span>
+        </div>
 
-    <header>
-        <div class="logo">BTN TELECOM</div>
-        <nav>
-            <ol>
-                <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#categories">Catégories</a></li>
-                <li><a href="#produits">Produits</a></li>
-            </ol>
-        </nav>
-        <div class="cart-container">
-            <button id="cart-icon-btn">
-                🛒 PANIER <span id="cart-count">0</span>
+        <ul>
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#categories">Catégories</a></li>
+            <li><a href="#produits">Produits</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- ================= HERO ================= -->
+<section id="accueil" class="hero">
+    <div class="container hero-content">
+
+        <h1>BTN TELECOM</h1>
+        <h3><em>Votre boutique mobile & accessoires</em></h3>
+
+        <p>
+            Bienvenue chez BTN Telecom, votre destination pour les smartphones et accessoires de qualité.
+            Découvrez nos produits et profitez des meilleures offres du marché.
+        </p>
+
+        <a href="#produits" class="btn">Voir les produits</a>
+
+    </div>
+</section>
+
+<!-- ================= CATEGORIES ================= -->
+<section id="categories" class="categories container">
+
+    <div class="section-title">
+        <h2>Catégories</h2>
+        <p>Nos produits sont classés en deux catégories principales</p>
+    </div>
+
+    <div class="category-grid">
+
+        <div class="card">
+            <div class="icon">📱</div>
+            <h4>Téléphones</h4>
+            <p>Smartphones Android et iPhone de dernière génération.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🎧</div>
+            <h4>Accessoires</h4>
+            <p>Casques, chargeurs, coques et accessoires premium.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= PRODUITS ================= -->
+<section id="produits" class="products container">
+
+    <div class="section-title">
+        <h2>Produit phare</h2>
+    </div>
+
+    <!-- PRODUIT -->
+    <div class="product-card">
+
+        <div class="product-info">
+            <h3>Samsung S23 Ultra</h3>
+
+            <div class="badge">Disponible</div>
+
+            <p class="price">715 000 FCFA</p>
+            <p><strong>Référence :</strong> SM-S918</p>
+            <p><strong>Stock :</strong> Plusieurs modèles disponibles</p>
+
+            <button onclick="addToCart('Samsung S23 Ultra', 715000)" class="btn">
+                Ajouter au panier 🛒
             </button>
         </div>
-    </header>
 
-    <div id="cart-sidebar" class="cart-sidebar">
-        <div class="cart-header">
-            <h3>MON PANIER</h3>
-            <button id="close-cart">&times;</button>
+        <!-- GALERIE -->
+        <div class="product-gallery">
+
+            <figure>
+                <img src="Image1.jpg" alt="Samsung S23 face">
+                <figcaption>Face</figcaption>
+            </figure>
+
+            <figure>
+                <img src="Image2.jpg" alt="Samsung S23 dos">
+                <figcaption>Dos</figcaption>
+            </figure>
+
+            <figure>
+                <img src="Image3.jpg" alt="Samsung S23 côté">
+                <figcaption>Côté</figcaption>
+            </figure>
+
         </div>
-        <div id="cart-items-list">
-            <p class="empty-msg">Votre panier est vide.</p>
+
+        <!-- ACCESSOIRES -->
+        <div class="extra-product">
+            <h4>Accessoires Samsung</h4>
+            <img src="Image4.jpg" alt="Accessoires Samsung">
         </div>
-        <div class="cart-footer">
-            <div class="total">
-                <span class="total-label">Total estimation</span>
-                <span class="total-amount"><span id="cart-total">0</span> FCFA</span>
-            </div>
-            <button class="btn-checkout">Commander via WhatsApp</button>
+
+        <!-- TABLE -->
+        <div class="specs">
+            <h3>Caractéristiques techniques</h3>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Élément</th>
+                        <th>Caractéristique</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr><td>Écran</td><td>6,8 pouces</td></tr>
+                    <tr><td>RAM</td><td>12 Go</td></tr>
+                    <tr><td>Stockage</td><td>512 Go</td></tr>
+                    <tr><td>Batterie</td><td>5000 mAh</td></tr>
+                    <tr><td>Caméra</td><td>200 MP</td></tr>
+                </tbody>
+            </table>
+
         </div>
     </div>
 
-    <main>
-        <section id="accueil">
-            <div class="hero-content">
-                <span class="hero-eyebrow">Innovation & Technologie</span>
-                <h1>Bienvenue chez <em>BTN TELECOM</em></h1>
-                <p class="hero-sub">
-                    Votre destination n°1 pour la haute technologie. Nous proposons des solutions de pointe 
-                    en télécommunication et les derniers modèles au meilleur prix.
-                </p>
-                <a href="#produits" class="hero-cta">Explorer le catalogue</a>
-            </div>
-        </section>
+</section>
 
-        <section id="produits" class="section-wrapper">
-            <div class="section-header">
-                <h2>Catalogue 2026</h2>
-                <span class="badge-count">Articles en vedette</span>
-            </div>
-
-            <div class="product-grid">
-                
-                <article class="product-card">
-                    <div class="status-tag">Best-Seller</div>
-                    <img src="Image1.jpg" alt="Samsung S23 Ultra" class="main-img">
-                    <div class="product-details">
-                        <h3>Samsung S23 Ultra</h3>
-                        <p class="specs-preview">6.8" AMOLED | 12Go RAM | 512Go</p>
-                        <div class="price-tag">715 000 FCFA</div>
-                        <div class="actions">
-                            <button class="btn-buy">Ajouter au panier</button>
-                            <button class="btn-view">Détails</button>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="product-card">
-                    <div class="status-tag">Nouveauté</div>
-                    <img src="thai-nguyen-NbJ2LrMc3kE-unsplash.jpg" alt="iPhone 15 Pro Max" class="main-img">
-                    <div class="product-details">
-                        <h3>iPhone 15 Pro Max</h3>
-                        <p class="specs-preview">Titane Noir | Puce A17 Pro | 256Go</p>
-                        <div class="price-tag">950 000 FCFA</div>
-                        <div class="actions">
-                            <button class="btn-buy">Ajouter au panier</button>
-                            <button class="btn-view">Détails</button>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="product-card">
-                    <div class="status-tag promo">-10%</div>
-                    <img src="zana-latif-TnDTzDiJbJo-unsplash.jpg" alt="AirPods Pro 2" class="main-img">
-                    <div class="product-details">
-                        <h3>AirPods Pro 2</h3>
-                        <p class="specs-preview">Réduction de bruit | Audio Spatial</p>
-                        <div class="price-tag">185 000 FCFA</div>
-                        <div class="actions">
-                            <button class="btn-buy">Ajouter au panier</button>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="product-card">
-                    <div class="status-tag">Accessoire</div>
-                    <img src="daniel-romero-COvwQWG2XMc-unsplash.jpg" alt="Galaxy Watch 6" class="main-img">
-                    <div class="product-details">
-                        <h3>Watch 6 Classic</h3>
-                        <p class="specs-preview">Lunette rotative | ECG | 43mm</p>
-                        <div class="price-tag">245 000 FCFA</div>
-                        <div class="actions">
-                            <button class="btn-buy">Ajouter au panier</button>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="product-card">
-                    <div class="status-tag">Pack</div>
-                    <img src="Image4.jpg" alt="Kit Accessoires" class="main-img">
-                    <div class="product-details">
-                        <h3>Pack Accessoires</h3>
-                        <p class="specs-preview">Chargeur 45W | Coque | Protection</p>
-                        <div class="price-tag">45 000 FCFA</div>
-                        <div class="actions">
-                            <button class="btn-buy">Ajouter au panier</button>
-                        </div>
-                    </div>
-                </article>
-
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="logo">BTN TELECOM</div>
-        <p>&copy; 2026 | Développé avec excellence.</p>
-        <p>Yaoundé, Cameroun</p>
-    </footer>
-
-    <script src="script.js"></script>
+<!-- ================= FOOTER ================= -->
+<footer>
+    <p>&copy; 2026 BTN TELECOM — Tous droits réservés</p>
+</footer>
+<script src="script.js"></script>
 </body>
 </html>
