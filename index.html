@@ -9,8 +9,8 @@
 
 <body>
     <!-- En-tete du site -->
-    <header>
-        <nav>
+    <header class="head" id="head-nav">
+        <nav class="nav" id="nav-link">
             <ol>
                 <li><a href="#Accueil">Accueil</a></li>
                 <li><a href="#Catégorie">Catégorie</a></li>
@@ -75,14 +75,14 @@
         <img src="Image4.jpg" alt="Accessoires Samsung" width="150" height="250">
     </figure>
     <h3><em>Tablaux de Caractéristique</em></h3>
-    <table border="3">
+    <table id="tab" border="3">
         <thead>
             <tr>
                 <th>Elements</th>
                 <th>Caractéristiques</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody id="tbody">
             <tr>
                 <td>
                     Ecran
@@ -122,8 +122,76 @@
                 <td>
                     200Mp
                 </td>
-            </tr></tbody>
+            </tr>
+        </tbody>
     </table>
+    <section>
+        <h2>Acheter</h2>
+        <form action="">
+            <label>Quantité</label>
+            <input type="number" min="1" value="1" required><br>
+            <label>Couleur</label>
+            <select name="" id="" required>
+                <option>choisir</option>
+                <option>Noir</option>
+                <option>Bleu</option>
+                <option>Blanc</option>
+                <option>Gris</option>
+            </select>
+            <br>
+            <label>Capacité</label>
+            <select name="" id="" required>
+                <option>choisir</option>
+                <option>64GB</option>
+                <option>128GB</option>
+                <option>256GB</option>
+                <option>512GB</option>
+            </select>
+            <br><br>
+            <button id="bouton" type="submit">Ajouter au panier</button>
+        </form>
+    </section>
+    <section id="sec1">
+        <h2>Avis clients</h2>
+        <p>✨✨✨✨Excellent téléphone</p>
+        <p>✨✨✨✨Très bon rapport qualité prix</p>
+        <p>✨✨✨✨Je recommande vivement</p>
+
+    </section>
+    <section id="sec2">
+        <h2><em>Produits Similaires</em></h2>
+        <img src="Image7.jpg" alt="vue de dos du telephone" width="150" height="250">
+        <figcaption>
+            GOOGLE PIXEL 10
+        </figcaption>
+        <img src="Image5.jpg" alt="vue de dos" width="150" height="250">
+        <figcaption>
+            IPHONE 15 PM
+        </figcaption>
+        <img src="Image6.jpg" alt="vue de dos" width="150" height="250">
+        <figcaption>
+            SAMSUNG GALAXY FOLD 7
+        </figcaption>
+    </section>
+    <section id="sec3">
+        <h2>Onglets</h2>
+        <nav class="" id="nav-link2">
+            <ol>
+                <li><a href="#description">Description</a></li>
+                <li><a href="#specification">Specification</a></li>
+                <li><a href="#avis">Avis</a></li>
+            </ol>
+        </nav>
+        <h3 id="description">Description</h3>
+        <p>description detaillée du produit...</p>
+
+        <h3 id="spécifiaction">Spécification</h3>
+        <p>Spécification détaillée...</p>
+
+        <h3 id="avis">Avis</h3>
+        <textarea cols="30" rows="15" placeholder="">
+        </textarea>
+    </section>
 </body>
 
 </html>
