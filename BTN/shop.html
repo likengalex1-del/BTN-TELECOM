@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutique | BTN TELECOM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="loader" id="loader"><div class="spinner"></div></div>
+
+<nav>
+    <div class="container nav-wrapper">
+        <h2 class="logo">BTN <span>TELECOM</span></h2>
+        <div class="nav-links">
+            <a href="index.html">Accueil</a>
+            <a href="shop.html">Boutique</a>
+            <a href="cart.html" class="cart-status">🛒 <span id="cart-count">0</span></a>
+        </div>
+    </div>
+</nav>
+
+<section class="container" style="padding: 40px 20px;">
+    <h1 style="margin-bottom: 20px;">Notre <span>Catalogue</span></h1>
+    
+    <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 30px;">
+        <input id="search" class="search-bar" style="flex: 2; min-width: 250px;" placeholder="Rechercher un modèle (Samsung, iPhone...)" />
+        <select id="filter" class="search-bar" style="flex: 1; cursor: pointer;">
+            <option value="all">Toutes les catégories</option>
+            <option value="Téléphones">Téléphones</option>
+            <option value="Accessoires">Accessoires</option>
+        </select>
+    </div>
+
+    <div class="grid" id="shop">
+        </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>Propulsé par <strong>Sterling Black</strong> &copy; 2026</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+// Logique spécifique à la page boutique
+document.addEventListener("DOMContentLoaded", () => {
+    const container = document.getElementById("shop");
+    const searchInput = document.getElementById("search");
+    const filterSelect = document.getElementById("filter");
+
+    function updateShop() {
+        const searchValue = searchInput.value.toLowerCase();
+        const filterValue = filterSelect.value;
+
+        const filtered = products.filter(p => {
+            const matchesSearch = p.name.toLowerCase().includes(searchValue);
+            const matchesFilter = filterValue === "all" || p.category === filterValue;
+            return matchesSearch && matchesFilter;
+        });
+
+        renderProducts(filtered, container);
+    }
+
+    // Écouteurs pour recherche et filtre
+    searchInput.addEventListener("input", updateShop);
+    filterSelect.addEventListener("change", updateShop);
+
+    // Initialisation
+    updateShop();
+});
+</script>
+
+</body>
+</html>

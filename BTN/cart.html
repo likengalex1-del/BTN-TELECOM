@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Panier | BTN TELECOM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="loader" class="loader">
+    <div class="spinner"></div>
+</div>
+
+<nav>
+    <div class="container nav-wrapper">
+        <h2 class="logo">BTN <span>TELECOM</span></h2>
+        <div class="nav-links">
+            <a href="index.html">Accueil</a>
+            <a href="shop.html">Boutique</a>
+            <a href="cart.html" class="cart-status">🛒 <span id="cart-count">0</span></a>
+        </div>
+    </div>
+</nav>
+
+<main class="container" style="padding: 50px 20px;">
+    <h1 style="margin-bottom: 30px;">Votre <span>Panier</span></h1>
+
+    <div id="cart-items"></div>
+
+    <div id="cart-summary" style="margin-top: 40px; padding: 30px; background: var(--card); border-radius: 20px; border: 1px solid var(--border); text-align: right;">
+        <p style="color: var(--muted); margin-bottom: 10px;">Montant total à régler :</p>
+        <h2 id="final-total" style="font-size: 2.5rem; color: var(--cyan); margin-bottom: 25px;">0 FCFA</h2>
+        <button onclick="checkout()" class="btn btn-primary" style="padding: 15px 40px; font-size: 1.1rem;">
+            Valider la commande
+        </button>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <p>Propulsé par <strong>Sterling Black</strong> &copy; 2026</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+
+<script>
+    // Le script.js contient déjà la logique de renderCartPage()
+    // On s'assure juste qu'elle se lance ici si les IDs correspondent.
+    
+    // Si tu as utilisé l'ID "cart" dans ton HTML précédent :
+    document.addEventListener("DOMContentLoaded", () => {
+        // La fonction renderCartPage est déjà définie dans ton script.js global
+        // Elle va remplir l'élément avec l'ID "cart-items" ou "cart"
+        if (typeof renderCartPage === "function") {
+            renderCartPage();
+        }
+    });
+</script>
+
+</body>
+</html>
