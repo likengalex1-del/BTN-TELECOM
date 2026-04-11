@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détail Produit | BTN TELECOM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="loader" id="loader"><div class="spinner"></div></div>
+
+<nav>
+    <div class="container nav-wrapper">
+        <h2 class="logo">BTN <span>TELECOM</span></h2>
+        <div class="nav-links">
+            <a href="shop.html">← Retour à la boutique</a>
+            <a href="cart.html" class="cart-status">🛒 <span id="cart-count">0</span></a>
+        </div>
+    </div>
+</nav>
+
+<main class="container" id="product-container" style="padding: 60px 20px;">
+    </main>
+
+<footer>
+    <div class="container">
+        <p>Propulsé par <strong>Sterling Black</strong> &copy; 2026</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const params = new URLSearchParams(window.location.search);
+    const id = Number(params.get("id"));
+    const product = products.find(p => p.id === id);
+    const container = document.getElementById("product-container");
+
+    // Sécurité : si l'ID n'existe pas ou est invalide
+    if (!product) {
+        container.innerHTML = `
+            <div style="text-align:center; padding: 100px 0;">
+                <h2>Oups ! Produit introuvable.</h2>
+                <a href="shop.html" class="btn btn-outline" style="margin-top:20px;">Retourner à la boutique</a>
+            </div>`;
+        return;
+    }
+
+    // Mise à jour du titre de la page
+    document.title = `${product.name} | BTN TELECOM`;
+
+    // Injection du layout en deux colonnes
+    container.innerHTML = `
+        <div class="product-page-layout">
+            <div class="product-image-side">
+                <img src="${product.img}" alt="${product.name}" class="main-img">
+            </div>
+            <div class="product-info-side">
+                <span class="category-tag">${product.category}</span>
+                <h1 class="product-title">${product.name}</h1>
+                <p class="product-price">${product.price.toLocaleString()} FCFA</p>
+                <div class="product-divider"></div>
+                <p class="product-desc">${product.desc || "Découvrez la puissance et l'élégance du dernier né de la gamme. Performance exceptionnelle garantie par BTN TELECOM."}</p>
+                
+                <div class="purchase-actions" style="margin-top: 40px;">
+                    <button id="add-to-cart-btn" class="btn btn-primary" style="width: 100%; padding: 18px; font-size: 1.1rem;">
+                        Ajouter au panier
+                    </button>
+                    <p style="font-size: 0.8rem; color: var(--muted); margin-top: 15px; text-align: center;">
+                        ✓ Disponible en stock à Yaoundé
+                    </p>
+                </div>
+            </div>
+        </div>
+    `;
+
+    // Ecouteur d'événement pour le bouton
+    document.getElementById("add-to-cart-btn").addEventListener("click", () => {
+        addToCart(product.id);
+    });
+});
+</script>
+
+</body>
+</html>
