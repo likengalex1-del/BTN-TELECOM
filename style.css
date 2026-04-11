@@ -1,0 +1,251 @@
+/* Importation d'une police moderne */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+    --primary-color: #2c3e50;
+    --accent-color: #e67e22;
+    --bg-light: #f4f7f6;
+    --white: #ffffff;
+    --shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: var(--bg-light);
+    margin: 0;
+    padding: 0;
+}
+
+/* 1. Header & Navigation */
+.head {
+    background-color: var(--primary-color);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow);
+}
+
+.nav ol {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+#nav-link2 ol{
+    text-align: center;
+    display: flex;
+    text-decoration: none;
+    justify-content: space-between;
+    list-style: none;
+}
+
+.nav li {
+    margin: 0 20px;
+}
+
+.nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: var(--accent-color);
+}
+
+/* 2. Mise en page globale */
+h2 {
+    color: var(--primary-color);
+    border-left: 5px solid var(--accent-color);
+    padding-left: 15px;
+    margin-top: 40px;
+    text-align: center;
+}
+h3{
+    text-align: center;
+}
+h4{
+    text-align: center;
+}
+p {
+    max-width: 800px;
+    margin: 10px auto;
+    text-align: center;
+}
+
+/* 3. Galerie de produits */
+figure {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    margin: 20px auto;
+    max-width: 900px;
+    text-align: center;
+}
+
+figure img {
+    border-radius: 8px;
+    margin: 10px;
+    transition: transform 0.3s;
+    object-fit: cover;
+}
+
+figure img:hover {
+    transform: scale(1.05);
+}
+
+figcaption {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* 4. Tableaux */
+table {
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: var(--white);
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    border: none !important; /* On remplace l'attribut border="3" */
+}
+
+th {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px;
+}
+
+td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* 5. Formulaire d'achat */
+section {
+    background: var(--white);
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: 600;
+}
+
+input, select, textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-family: inherit;
+}
+
+#bouton {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#bouton:hover {
+    background-color: #d35400;
+}
+
+/* 6. Produits Similaires */
+#sec2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    background: transparent;
+    box-shadow: none;
+}
+
+#sec2 figure, #sec2 section {
+    width: 200px;
+}
+
+/* 7. Avis & Textarea */
+#sec3 textarea {
+    width: 100%;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .nav ol {
+        flex-direction: column;
+        align-items: center;
+    }
+    .nav li {
+        margin: 5px 0;
+    }
+}
+/* --- Alignement vertical des produits similaires --- */
+#sec2 {
+    /* Utilise Flexbox pour la mise en page */
+    display: flex;
+    /* Aligne les éléments sur un axe vertical (colonne) */
+    flex-direction: column;
+    /* Centre les éléments horizontalement dans la colonne */
+    align-items: center;
+    /* Ajoute de l'espace entre chaque produit */
+    gap: 2rem;
+    
+    /* Centre le titre "Produits Similaires" horizontalement */
+    text-align: center;
+}
+
+/* Style pour chaque bloc produit (image + texte) */
+#sec2 figcaption {
+    /* Permet au texte de rester aligné avec son image */
+    display: block;
+    margin-top: 0.5rem; /* Espace entre l'image et son texte */
+}
+
+/* Style spécifique pour les images pour qu'elles soient bien centrées */
+#sec2 img {
+    margin: 0;
+    /* Assure une taille correcte si le flexbox compresse trop */
+    max-width: 100%;
+    height: auto;
+}
+h2 {
+    color: var(--primary-color);
+    border-left: 5px solid var(--accent-color);
+    padding-left: 10px; /* Espace entre le bâton et le texte */
+    margin: 20px auto;  /* Gère l'espacement haut/bas et centre le bloc */
+    
+    /* LES DEUX LIGNES CLÉS : */
+    display: table;      /* Permet au bloc de ne prendre que la largeur du texte */
+    text-align: left;    /* Aligne le texte à l'intérieur par rapport au bâton */
+}
